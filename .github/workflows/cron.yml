@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Drain send queue
         run: |
-          curl -X POST "${{ secrets.NETLIFY_SITE_URL }}/api/cron/drain-queue" \
+          curl -X POST "${{ secrets.SITE_URL }}/api/cron/drain-queue" \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
       - name: Ping Supabase to prevent auto-pause
         run: |
